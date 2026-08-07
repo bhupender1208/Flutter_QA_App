@@ -119,12 +119,11 @@ lib/
 ![Splash Screen](screenshots/splash_screen.png)
 
 ### Home Screen
-
-![Home Screen](screenshots/home.png)
-
-### Home Screen
-
-![Home Screen](screenshots/home_screen.png)
+<p align="center">
+  <img src="screenshots/home.png" width="250">
+  <img src="screenshots/home_screen.png" width="250">
+</p>
+ 
  
  
 ### 📱 App Flow Diagram
