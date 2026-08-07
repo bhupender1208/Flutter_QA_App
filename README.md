@@ -122,8 +122,8 @@ lib/
 
 ### Home Screen
 <p align="center">
-  <img src="screenshots/home.png" width="250">
-  <img src="screenshots/home_screen.png" width="250">
+  <img src="screenshots/home.png" width="250", height="300">
+  <img src="screenshots/home_screen.png" width="250", height="300">
 </p>
  
  
