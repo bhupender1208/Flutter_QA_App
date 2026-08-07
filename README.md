@@ -111,7 +111,21 @@ lib/
 └── constants/
     └── app_constants.dart            #   Colors, strings, dimensions, theme constants
 ```
+---
+## 📸 Screenshots
 
+### Splash Screen
+
+![Splash Screen](screenshots/splash_screen.png)
+
+### Home Screen
+
+![Home Screen](screenshots/home.png)
+
+### Home Screen
+
+![Home Screen](screenshots/home_screen.png)
+ 
  
 ### 📱 App Flow Diagram
 
