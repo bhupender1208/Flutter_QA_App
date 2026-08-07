@@ -117,7 +117,7 @@ lib/
 ### Splash Screen
 
 <p align="center">
-  <img src="screenshots/splash_screen.png" width="300">
+  <img src="screenshots/splash_screen.png" width="300", height="300">
 </p>
 
 ### Home Screen
