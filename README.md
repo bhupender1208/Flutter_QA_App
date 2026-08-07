@@ -38,7 +38,7 @@ It features **20+ interview questions** covering Flutter, Dart, State Management
 | 📱 **Responsive UI** | Works smoothly on all Android screen sizes |
 | ⚡ **Fast Performance** | Pure Dart logic, no heavy dependencies |
 | 🎨 **Modern Design** | Gradient header, animated category chips, accordion cards |
-| 🌐 **Hindi + English** | UI strings mix of both for better understanding |
+ 
 
 ### 🎯 Special Features
 
