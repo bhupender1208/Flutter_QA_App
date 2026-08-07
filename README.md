@@ -116,7 +116,9 @@ lib/
 
 ### Splash Screen
 
-![Splash Screen](screenshots/splash_screen.png)
+<p align="center">
+  <img src="screenshots/splash_screen.png" width="300">
+</p>
 
 ### Home Screen
 <p align="center">
