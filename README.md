@@ -1,29 +1,7 @@
- 
-# flutter_qa_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
- 
-# Flutter_QA_App
-
-
  # FlutIQ 🎯
 
 > **Your Flutter & Dart Interview Preparation App**
-> Buit with ❤️ using Flutter + Provider (MVC Architecture)
+> Built with ❤️ using Flutter + Provider (MVC Architecture)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
@@ -37,9 +15,11 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 📱 Project Overview
 
-**FlutIQ** ek Flutter-powered Q&A application hai jo Flutter developers ke liye interview preparation ko easy aur effective banata hai. 
+**FlutIQ** is a Flutter-powered Q&A application designed to make interview preparation easy and effective for Flutter developers.
 
-Ismein **100+ interview questions** hain jo Flutter, Dart, State Management, Widgets, aur advanced topics ko cover karte hain — category-wise organized, searchable, aur expand-on-tap format mein.
+It features **20+ interview questions** covering Flutter, Dart, State Management, Widgets, and advanced topics. The questions are organized by category, searchable, and presented in an **expand-on-tap** format for a smooth and user-friendly learning experience.
+
+ 
 
 > *"Interview prep, one tap at a time"*
 
@@ -132,86 +112,7 @@ lib/
     └── app_constants.dart            #   Colors, strings, dimensions, theme constants
 ```
 
-### 📐 MVC Data Flow
-
-```
-main.dart
-    │
-    ▼
-ChangeNotifierProvider<HomeController>
-    │
-    ├─── HomeController (Logic)
-    │        │
-    │        ├── _activeCategory    ← State
-    │        ├── _searchQuery       ← State
-    │        ├── _expandedIds       ← State
-    │        │
-    │        ├── filterQuestions()  ← Business Logic
-    │        ├── toggleExpansion()  ← Actions
-    │        ├── onCategorySelected()
-    │        ├── clearSearch()
-    │        │
-    │        └── notifyListeners() ──────────────────┐
-    │                                              (rebuild)
-    │
-    └─── HomeScreen (View)
-             │
-             ├── AppHeader       (UI)
-             ├── SearchBar       (UI)
-             ├── StatsRow        (UI)
-             ├── CategoryTabs    (UI)
-             ├── QACard List     (UI)
-             └── Empty/Footer    (UI)
-```
-
----
-
-## 📸 Screenshots
-
-> Add your app screenshots here
-
-```
-┌─────────────────────────────────────────┐
-│  ┌─────────────────────────────────┐    │
-│  │ 💡 IQ                           │    │   ← Animated Splash
-│  │                                 │    │      (2.5s)
-│  │      FlutIQ                     │    │
-│  │   Flutter Interview Prep        │    │
-│  └─────────────────────────────────┘    │
-└─────────────────────────────────────────┘
-
-┌─────────────────────────────────────────┐
-│  ██████╗ ███████╗███╗   ███╗███████╗    │
-│  ██╔══██╗██╔════╝████╗ ████║██╔════╝    │   ← Gradient Header
-│  ███████║███████╗██╔████╔██║███████╗    │      "Flutter Q&A"
-│  ██╔══██║╚════██║██║╚██╔╝██║╚════██║    │
-│  ██║  ██║███████║██║ ╚═╝ ██║███████║    │
-│  ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝    │
-│                                         │
-│  🔍 Search questions...            ✕    │   ← Search Bar
-│                                         │
-│  ┌─────────────┐  ┌─────────────┐       │
-│  │  📚  Total   │  │  🔥 Results │       │   ← Stats Row
-│  │     42      │  │      12     │       │
-│  └─────────────┘  └─────────────┘       │
-│                                         │
-│  [All] [Flutter] [Dart] [State Mng]     │   ← Category Tabs
-│                                         │
-│  ┌─────────────────────────────────┐    │
-│  │ [Flutter] What is StatefulWidget │ ▼ │   ← Q&A Card
-│  └─────────────────────────────────┘    │      (Collapsed)
-│                                         │
-│  ┌─────────────────────────────────┐    │
-│  │ [Dart]    async/await kaise     │ ▼ │   ← Q&A Card
-│  │           work karte hain?      │   │      (Expanded)
-│  │  ┌───────────────────────────┐  │    │
-│  │  │ async function Future      │  │    │   ← Answer
-│  │  │ return karta hai...       │  │    │
-│  │  └───────────────────────────┘  │    │
-│  └─────────────────────────────────┘    │
-└─────────────────────────────────────────┘
-```
-
+ 
 ### 📱 App Flow Diagram
 
 ```
@@ -289,107 +190,26 @@ The APK will be at:
 build/app/outputs/flutter-apk/app-release.apk
 ```
 
----
-
-## 🔧 Configuration
-
-### Change App Name
-
-In `pubspec.yaml`:
-```yaml
-name: flutiq
-description: "FlutIQ - Flutter & Dart Interview Q&A App"
-```
-
-### Change Theme Colors
-
-In `lib/constants/app_constants.dart`:
-```dart
-class AppColors {
-  static const primary = Color(0xFF6C63FF);    // Change primary color
-  static const accent = Color(0xFFFF6584);     // Change accent color
-  static const background = Color(0xFFF5F6FA); // Change background
-}
-```
-
-### Add More Questions
-
-In `lib/data/questions_data.dart`, add new entries to `questionsList`:
-```dart
-Question(
-  id: '101',
-  question: 'Your new question here?',
-  answer: 'Your detailed answer here.',
-  category: 'Flutter Basics',  // Existing or new category
-),
-```
-
----
-
-## 📊 Available Categories
-
-| Category | Description |
-|---|---|
-| **All** | Show all questions |
-| **Flutter Basics** | Widgets, state, lifecycle |
-| **Dart** | Language features, async, null safety |
-| **State Management** | Provider, BLoC, InheritedWidget |
-| **Advanced** | Performance, architecture, testing |
-
----
+ 
+ ---
 
 ## 👨‍💻 Author
 
 <div align="center">
 
-### **[YOUR_NAME]**
+### **[BHUPENDER]**
 
 > Flutter Developer | Building meaningful apps 🚀
 
-[![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YOUR_USERNAME)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_USERNAME)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/YOUR_USERNAME)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@example.com)
+[![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/YOUR_USERNAME](https://github.com/bhupender1208/Flutter_QA_App))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/YOUR_USERNAME](https://www.linkedin.com/in/bhupender-00b134282?utm_source=share_via&utm_content=profile&utm_medium=member_android)) 
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:bhupender00012@gmail.com)
 
 </div>
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! 🎉
-
-1. **Fork** the repository
-2. **Clone** your fork
-3. **Create** a new branch: `git checkout -b feature/your-feature-name`
-4. **Commit** your changes: `git commit -m 'Add some amazing feature'`
-5. **Push** to the branch: `git push origin feature/your-feature-name`
-6. **Open** a **Pull Request**
-
----
-
-## 📄 License
-
-This project is open source and available under the **MIT License**.
-
-```
-MIT License
-
-Copyright (c) 2024 FlutIQ
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
-
----
-
-## ⭐ Show Your Support
+ ## ⭐ Show Your Support
 
 > If this project helped you in your interview prep, give it a ⭐!
 
