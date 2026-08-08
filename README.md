@@ -214,10 +214,12 @@ build/app/outputs/flutter-apk/app-release.apk
 
 ### **[BHUPENDER]**
 
-> Flutter Developer | Building meaningful apps 🚀
+> Flutter Developer | Building meaningful apps 🚀 
 
-[![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/YOUR_USERNAME](https://github.com/bhupender1208/Flutter_QA_App))
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/YOUR_USERNAME](https://www.linkedin.com/in/bhupender-00b134282?utm_source=share_via&utm_content=profile&utm_medium=member_android)) 
+[![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bhupender1208)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bhupender-00b134282/)
+
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:bhupender00012@gmail.com)
 
 </div>
