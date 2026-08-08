@@ -17,7 +17,7 @@
 
 **FlutIQ** is a Flutter-powered Q&A application designed to make interview preparation easy and effective for Flutter developers.
 
-It features **20+ interview questions** covering Flutter, Dart, State Management, Widgets, and advanced topics. The questions are organized by category, searchable, and presented in an **expand-on-tap** format for a smooth and user-friendly learning experience.
+It features **65+ interview questions** covering Flutter, Dart, State Management, Widgets, and advanced topics. The questions are organized by category, searchable, and presented in an **expand-on-tap** format for a smooth and user-friendly learning experience.
 
  
 
