@@ -1,51 +1,62 @@
  # FlutIQ 🎯
 
 > **Your Flutter & Dart Interview Preparation App**
-> Built with ❤️ using Flutter + Provider (MVC Architecture)
+> Built with ❤️ using Flutter + Firebase + Provider (MVC Architecture)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter">
   <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart">
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase">
+  <img src="https://img.shields.io/badge/Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Cloud Firestore">
   <img src="https://img.shields.io/badge/Architecture-MVC-6C63FF?style=for-the-badge" alt="MVC">
   <img src="https://img.shields.io/badge/State-Provider-4CAF50?style=for-the-badge" alt="Provider">
-  <img src="https://img.shields.io/badge/Version-1.0.0-FF6584?style=for-the-badge" alt="v1.0.0">
+  <img src="https://img.shields.io/badge/Version-1.1.0-FF6584?style=for-the-badge" alt="v1.1.0">
 </p>
 
 ---
 
 ## 📱 Project Overview
 
-**FlutIQ** is a Flutter-powered Q&A application designed to make interview preparation easy and effective for Flutter developers.
+**FlutIQ** is a responsive Flutter interview-preparation application designed to help developers prepare for Flutter and Dart interviews through an organized and interactive Q&A experience.
 
-It features **65+ interview questions** covering Flutter, Dart, State Management, Widgets, and advanced topics. The questions are organized by category, searchable, and presented in an **expand-on-tap** format for a smooth and user-friendly learning experience.
+The app contains **70+ interview questions** covering Flutter/Dart fundamentals, State Management, Widgets/UI, Navigation, Data/API concepts, and other important interview topics.
 
- 
+Q&A content is stored and managed using **Cloud Firestore**, allowing questions to be added, edited, or removed without maintaining a hardcoded local question list.
 
-> *"Interview prep, one tap at a time"*
+FlutIQ also provides real-time search, category-based filtering, single-expand accordion cards, dynamic statistics, category-wise numbering, search highlighting, and code-style keyword formatting. 
 
 ---
-P
+
+ 
 ## ✨ Features
+
 
 | Feature | Description |
 |---|---|
-| 🔍 **Smart Search** | Real-time search across questions, answers, and categories |
-| 🏷️ **Category Filtering** | Filter questions by topic (Flutter Basics, Dart, State Management, etc.) |
-| 📂 **Expandable Q&A Cards** | Tap to expand/collapse answers with smooth animations |
-| 📊 **Live Stats** | Real-time count of total, filtered, and expanded questions |
-| 🎬 **Animated Splash Screen** | Professional intro with logo animation, gradient background, and fade transitions |
-| 🌓 **Clean Architecture** | MVC pattern with separate Model, View, Controller layers |
-| 📱 **Responsive UI** | Works smoothly on all Android screen sizes |
-| ⚡ **Fast Performance** | Pure Dart logic, no heavy dependencies |
-| 🎨 **Modern Design** | Gradient header, animated category chips, accordion cards |
+| 🔥 **Cloud Firestore Integration** | Q&A content is dynamically fetched from Firebase Cloud Firestore |
+| 🔍 **Smart Search** | Search across questions, answers, and categories with highlighted matches |
+| 🏷️ **Category Filtering** | Filter interview questions based on their topic/category |
+| 📂 **Accordion Q&A Cards** | Expand/collapse answers with smooth animations |
+| ☝️ **Single Expansion** | Opening a new Q&A card automatically collapses the previously opened card |
+| 🔢 **Dynamic Numbering** | Displays global question IDs in All and sequential numbering inside filtered categories |
+| 💻 **Code Keyword Highlighting** | Backtick-wrapped technical terms are rendered with code-style formatting |
+| 📊 **Dynamic Stats** | Displays total questions, currently visible questions, and available categories |
+| 🎬 **Animated Splash Screen** | Intro screen with logo animation, gradient background, and fade transition |
+| 🧩 **Provider State Management** | `ChangeNotifier` and Provider manage search, filtering, expansion, and Firestore-driven UI state |
+| 🏗️ **MVC Architecture** | Separates Models, Views, and Controllers for maintainable code |
+| 📱 **Responsive UI** | Responsive interface designed for web and mobile screen sizes |
+| 🎨 **Modern Design** | Gradient header, category chips, animated accordion cards, and clean Q&A layout |
+| 🌐 **Firebase Hosting** | Flutter web application deployed and hosted using Firebase Hosting |
  
 
 ### 🎯 Special Features
-
-- **Multiple Expansion Support** — Expand one or multiple Q&A cards simultaneously
+- **Firestore-powered Q&A Management** — Questions can be maintained from Firebase instead of a hardcoded local list
+- **Single-Open Accordion** — Keeps only one answer expanded at a time
+- **Dynamic Category Numbering** — Filtered categories automatically display sequential question numbers
 - **Clear Search One-Tap** — Instantly reset search with clear button
 - **Auto-collapse on Category Change** — Clean slate when switching categories
 - **Empty State UI** — Friendly message when no results found with reset option
+- **Dynamic Question Count** — Question and category statistics automatically update from loaded data
 - **Footer Attribution** — Built-in footer for app branding
 
 ---
@@ -59,6 +70,11 @@ Frontend
 ├── Provider                 — State Management
 └── Material Design 3        — Design System
 
+Backend / Database
+├── Firebase Core            — Firebase initialization
+├── Cloud Firestore          — Cloud-based Q&A database
+└── Firebase Hosting         — Web application hosting
+
 Architecture
 ├── MVC Pattern              — Clean separation of concerns
 ├── Model Layer              — Data classes + Repository (business logic)
@@ -66,15 +82,21 @@ Architecture
 └── Controller Layer         — ChangeNotifier (state bridge)
 
 Tools
-├── Android Studio / VS Code — IDE
-├── Flutter CLI              — Build tools
+├── VS Code / Android Studio — Development environment
+├── Flutter CLI              — Build and run tools
+├── Firebase CLI             — Firebase deployment
+├── FlutterFire CLI          — Flutter/Firebase configuration
 └── Git + GitHub             — Version control
 ```
+
+### 📦 Major Packages
 
 | Package | Version | Purpose |
 |---|---|---|
 | `flutter` | SDK `>=3.0.0` | Core framework |
 | `provider` | `^6.1.0` | State management |
+| `firebase_core` |  `^22.2.1` | Initializes Firebase in the Flutter application |
+| `cloud_firestore` | `^26.6.0` | Fetches and manages Q&A data from Cloud Firestore |
 | `flutter_lints` | `^3.0.0` | Code quality |
 | `flutter_test` | SDK | Testing |
 
@@ -85,31 +107,29 @@ Tools
 ```
 lib/
 │
-├── main.dart                         # 🎬 App entry point + Provider setup
+├── main.dart                         # App entry point + Firebase + Provider setup
+│
+├── firebase_options.dart             # FlutterFire generated Firebase configuration
 │
 ├── models/                           # 🔵 MODEL LAYER
-│   ├── question_model.dart           #   Question data class (id, question, answer, category)
-│   └── question_repository.dart      #   Data source + search/filter/Stats business logic
-│
-├── views/                            # 🟢 VIEW LAYER (UI — No business logic)
-│   ├── screens/
-│   │   ├── splash_screen.dart        #   Animated intro screen (2.5s auto-navigation)
-│   │   └── home_screen.dart          #   Main Q&A screen (CustomScrollView + Slivers)
-│   └── widgets/
-│       ├── app_header.dart           #   Gradient header with title + question count
-│       ├── search_bar.dart           #   Search input with clear button
-│       ├── stats_row.dart            #   Stats cards (total, showing, expanded)
-│       ├── category_tabs.dart        #   Horizontal scrollable category filter chips
-│       └── qa_card.dart              #   Expandable accordion Q&A card widget
+│   ├── question_model.dart           # Question model (id, question, answer, category)
+│   └── constants/
+│       └── app_constants.dart        # Colors, category labels and app constants
 │
 ├── controllers/                      # 🟠 CONTROLLER LAYER
-│   └── home_controller.dart          #   ChangeNotifier — state + actions bridge
+│   └── home_controller.dart          # Firestore data + search/filter/accordion state
 │
-├── data/
-│   └── Cloud Firestore             # Stores Flutter Q&A data
-│
-└── constants/
-    └── app_constants.dart            #   Colors, strings, dimensions, theme constants
+└── views/                            # 🟢 VIEW LAYER
+    └── screens/
+        ├── splash_screen.dart        # Animated intro screen
+        ├── home_screen.dart          # Main Q&A screen using CustomScrollView + Slivers
+        │
+        └── widgets/
+            ├── app_header.dart       # Header with title + question count
+            ├── search_bar.dart       # Search input + clear action
+            ├── stats_row.dart        # Total, showing and category statistics
+            ├── category_tabs.dart    # Horizontal category filter
+            └── qa_card.dart          # Accordion + search/code highlighting
 ```
 ---
 ## 📸 Screenshots
@@ -136,17 +156,30 @@ lib/
 │   💡 FlutIQ      │
 └────────┬────────┘
          │ fade transition
-         ▼
-┌─────────────────┐
-│   Home Screen    │
-│                  │
-│  🔍 Search       │
-│  📊 Stats        │
-│  🏷️ Categories   │
-│  📝 Q&A Cards    │
-│     ↓ tap        │
-│  Expand Answer   │
-└─────────────────┘
+         ▼ 
+┌─────────────────────┐
+│    Firebase Init    │
+│   Cloud Firestore   │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│     Home Screen     │
+│                     │
+│  🔍 Search          │
+│  📊 Dynamic Stats   │
+│  🏷️ Categories      │
+│  📝 Q&A Cards       │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│   Select Question   │
+│         ↓           │
+│   Expand Answer     │
+│         ↓           │
+│ Code/Search Styling │
+└─────────────────────┘ 
 ```
 
 ---
@@ -158,6 +191,8 @@ lib/
 - Flutter SDK `>=3.0.0`
 - Dart SDK `>=3.0.0`
 - Android Studio / VS Code with Flutter extensions
+- Firebase CLI
+- FlutterFire CLI
 
 ### Step 1 — Clone the Repository
 
@@ -171,8 +206,19 @@ cd flutiq
 ```bash
 flutter pub get
 ```
+### Step 3 — Firebase Configuration
 
-### Step 3 — Run the App
+The project uses Firebase and Cloud Firestore.
+
+If configuring Firebase for your own Firebase project, run:
+
+```bash
+flutterfire configure
+```
+
+Make sure the required Firebase platforms are configured before running the application.
+
+### Step 4 — Run the App
 
 ```bash
 # For debug mode
@@ -187,7 +233,7 @@ flutter run -d chrome         # Web
 flutter run -d windows        # Windows
 ```
 
-### Step 4 — Build APK (Production)
+### Step 5 — Build APK (Production)
 
 ```bash
 # Debug APK
@@ -203,6 +249,19 @@ flutter build appbundle --release
 The APK will be at:
 ```
 build/app/outputs/flutter-apk/app-release.apk
+```
+### Step 6 — Build & Deploy Flutter Web
+
+Build the latest Flutter web version:
+
+```bash
+flutter build web
+```
+
+Deploy it to Firebase Hosting:
+
+```bash
+firebase deploy --only hosting
 ```
 
  
