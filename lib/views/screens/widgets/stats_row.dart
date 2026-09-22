@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class StatsRow extends StatelessWidget {
   final int total;
   final int showing;
-  final int expanded;
+  final int categories;
 
   const StatsRow({
     super.key,
     required this.total,
     required this.showing,
-    required this.expanded,
+    required this.categories,
   });
 
   @override
@@ -23,7 +23,7 @@ class StatsRow extends StatelessWidget {
           const SizedBox(width: 10),
           _statCard(showing.toString(), 'Showing', Icons.visibility),
           const SizedBox(width: 10),
-          _statCard(expanded.toString(), 'Expanded', Icons.unfold_more),
+          _statCard(categories.toString(), 'Categories', Icons.category_outlined),
         ],
       ),
     );

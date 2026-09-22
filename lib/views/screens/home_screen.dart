@@ -21,11 +21,17 @@ class _HomeScreenState extends State<HomeScreen> {
   late final ScrollController _scrollController;
 
   @override
-  void initState() {
-    super.initState();
-    _scrollController = ScrollController();
-    _searchController.addListener(_onSearchChanged);
-  }
+void initState() {
+  super.initState();
+
+  _scrollController = ScrollController();
+  _searchController.addListener(_onSearchChanged);
+
+  Future.microtask(() {
+    if (!mounted) return;
+    context.read<HomeController>().listenToQuestions();
+  });
+}
 
   @override
   void dispose() {
@@ -50,6 +56,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final ctrl = context.watch<HomeController>();
     final filtered = ctrl.filteredQuestions;
+
+     // ⭐ Loading Screen
+  if (ctrl.isLoading) {
+    return const Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+
+  // ⭐ Error Screen
+  if (ctrl.errorMessage != null) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Text(
+            ctrl.errorMessage!,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+    );
+  }
 
     return Scaffold(
       backgroundColor: kBackground,
@@ -77,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: StatsRow(
                 total: ctrl.totalQuestions,
                 showing: ctrl.filteredCount,
-                expanded: ctrl.expandedCount,
+                categories: ctrl.categoriesCount,
               ),
             ),
 
@@ -102,10 +132,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   delegate: SliverChildBuilderDelegate(
                         (context, index) {
                       final q = filtered[index];
-                      final isExpanded = ctrl.expandedIds.contains(q.id);
+final isExpanded = ctrl.expandedId == q.id;
                       return QACard(
                         question: q,
-                        index: index,
+                        displayNumber:
+      ctrl.activeCategory == 'all'
+          ? q.id
+          : index + 1,
+                        // index: index,
                         isExpanded: isExpanded,
                         onTap: () => ctrl.toggleExpansion(q.id),
                         searchQuery: ctrl.searchQuery,

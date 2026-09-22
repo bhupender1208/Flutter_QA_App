@@ -106,7 +106,7 @@ lib/
 │   └── home_controller.dart          #   ChangeNotifier — state + actions bridge
 │
 ├── data/
-│   └── questions_data.dart           #   Static Q&A data (100+ questions)
+│   └── Cloud Firestore             # Stores Flutter Q&A data
 │
 └── constants/
     └── app_constants.dart            #   Colors, strings, dimensions, theme constants
